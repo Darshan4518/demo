@@ -61,12 +61,12 @@ export const ContactCTA = () => {
              {
               icon: <Phone className="h-6 w-6" />,
               title: "Call Us",
-              content: "+91 6362058989",
+              content: "+91 7636XXXXX",
             },
             {
               icon: <Mail className="h-6 w-6" />,
               title: "Email Us",
-              content: "codewithdarshan@gmail.com",
+              content: "demo@gmail.com",
             },
             {
               icon: <MapPin className="h-6 w-6" />,

@@ -29,16 +29,16 @@ export const Hero = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-violet-700 to-indigo-700"
         >
-          Digital Marketing Agency in Dubai
+          Lamp Media Tech
         </motion.h1>
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-2xl md:text-3xl font-semibold mb-6 text-indigo-900"
+          className="text-xl md:text-2xl font-semibold mb-6 text-indigo-900"
         >
-          Lamp Media Tech
+           Digital Marketing Agency in Dubai
         </motion.h2>
 
         <motion.p
