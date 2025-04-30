@@ -149,7 +149,7 @@ export const Services = () => {
   ]
 
   return (
-    <section className="py-24 px-4 md:px-20 bg-gray-50">
+    <section className="py-24 px-4 md:px-20 bg-gray-50" id="services">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

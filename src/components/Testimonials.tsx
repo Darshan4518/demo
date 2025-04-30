@@ -12,7 +12,7 @@ const testimonials = [
     company: "Dubai Luxury Retail",
     content:
       "Lamp Media Tech transformed our digital presence completely. Their SEO and social media strategies helped us increase our online sales by 70% in just six months.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXZhdGFyfGVufDB8fDB8fHww",
   },
   {
     name: "Mohammed Rahman",
@@ -20,7 +20,7 @@ const testimonials = [
     company: "Tech Innovations LLC",
     content:
       "Working with Lamp Media Tech has been a game-changer for our startup. Their team's expertise in PPC and content marketing helped us establish our brand in a competitive market.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     name: "Aisha Khalid",
@@ -28,7 +28,7 @@ const testimonials = [
     company: "Dubai Hospitality Group",
     content:
       "The team at Lamp Media Tech understands the Dubai market like no other agency. Their localized approach to digital marketing has helped us reach our ideal customers effectively.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1654110455429-cf322b40a906?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     name: "John Mathews",
@@ -36,7 +36,7 @@ const testimonials = [
     company: "Dubai Fitness Club",
     content:
       "I've worked with several marketing agencies before, but Lamp Media Tech's attention to detail and commitment to results sets them apart. Highly recommended!",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YXZhdGFyfGVufDB8fDB8fHww",
   },
 ]
 

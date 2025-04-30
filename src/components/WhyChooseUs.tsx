@@ -83,7 +83,7 @@ export const WhyChooseUs = () => {
   ]
 
   return (
-    <section className="py-24 px-4 md:px-20 bg-white">
+    <section className="py-24 px-4 md:px-20 bg-white" id="why">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

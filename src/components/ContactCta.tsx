@@ -6,7 +6,7 @@ import { ArrowRight, Mail, Phone, MapPin } from "lucide-react"
 
 export const ContactCTA = () => {
   return (
-    <section className="py-24 px-4 md:px-20 relative overflow-hidden">
+    <section className="py-24 px-4 md:px-20 relative overflow-hidden" id="contact">
       <div className="absolute inset-0 bg-gradient-to-br from-violet-600 to-indigo-700" />
 
       <div className="absolute inset-0">
