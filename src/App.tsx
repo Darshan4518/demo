@@ -5,8 +5,8 @@ import { WhyChooseUs } from "./components/WhyChooseUs"
 import { ContactCTA } from "./components/ContactCta"
 import { Testimonials } from "./components/Testimonials"
 import { WelcomeSection } from './components/WelcomeSection'
-import Navbar from './components/Navbar'
 import { useEffect } from 'react'
+import { Navbar } from './components/Navbar'
 
 function App() {
   useEffect(() => {
@@ -17,8 +17,8 @@ function App() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-white">
-      <Navbar/>
+    <main className="min-h-screen bg-black text-white">
+      <Navbar />
       <Hero />
       <WelcomeSection />
       <Services />

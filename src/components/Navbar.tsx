@@ -1,31 +1,41 @@
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
 
- const Navbar = () => {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
-    return (
-        <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-blue-600">Lamp Media Tech</h1>
-        <nav className="hidden md:flex space-x-6">
-          <a href="#services" className="text-gray-700 hover:text-blue-600">Services</a>
-          <a href="#why" className="text-gray-700 hover:text-blue-600">Why Us</a>
-          <a href="#contact" className="text-gray-700 hover:text-blue-600">Contact</a>
+import { Button } from "../components/ui/button"
+import { motion } from "framer-motion"
+
+export const Navbar = () => {
+  return (
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-purple-900/20"
+    >
+      <div className="container mx-auto flex items-center justify-between py-4 px-4">
+        <a href="/" className="flex items-center">
+          <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-500 to-purple-600">
+            Lamp Media Tech
+          </span>
+        </a>
+
+        <nav className="hidden md:flex items-center space-x-8">
+          <a href="#services" className="text-gray-300 hover:text-white transition-colors">
+            Services
+          </a>
+          <a href="#why-us" className="text-gray-300 hover:text-white transition-colors">
+            Why Us
+          </a>
+          <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">
+            Testimonials
+          </a>
+          <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
+            Contact
+          </a>
         </nav>
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
+
+        <Button className="bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:from-fuchsia-700 hover:to-purple-700 text-white border-none">
+          Speak to an expert
+        </Button>
       </div>
-      {isOpen && (
-        <div className="md:hidden bg-white px-4 pb-4 space-y-2">
-          <a href="#services" className="block text-gray-700 hover:text-blue-600">Services</a>
-          <a href="#why" className="block text-gray-700 hover:text-blue-600">Why Us</a>
-          <a href="#contact" className="block text-gray-700 hover:text-blue-600">Contact</a>
-        </div>
-      )}
-    </header>
-    );
-  };
-  export default Navbar;
+    </motion.header>
+  )
+}

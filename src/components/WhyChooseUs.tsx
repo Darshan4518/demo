@@ -5,8 +5,6 @@ import { motion } from "framer-motion"
 import { Target, BarChart, Users, Award } from "lucide-react"
 import { Card, CardContent } from "../components/ui/card"
 
-
-
 type FeatureCardProps = {
   title: string
   description: string
@@ -22,13 +20,13 @@ const FeatureCard = ({ title, description, icon, index }: FeatureCardProps) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
     >
-      <Card className="border-none shadow-md hover:shadow-lg transition-all duration-300 h-full">
+      <Card className="border-purple-900/50 bg-black/40 backdrop-blur-sm shadow-md hover:shadow-purple-500/10 transition-all duration-300 h-full">
         <CardContent className="pt-6 flex flex-col items-center text-center">
-          <div className="w-14 h-14 rounded-full bg-indigo-100 flex items-center justify-center mb-4 text-indigo-600">
+          <div className="w-14 h-14 rounded-full bg-purple-900/50 flex items-center justify-center mb-4 text-purple-300">
             {icon}
           </div>
-          <h3 className="font-bold text-xl mb-2 text-gray-800">{title}</h3>
-          <p className="text-gray-600">{description}</p>
+          <h3 className="font-bold text-xl mb-2 text-white">{title}</h3>
+          <p className="text-gray-300">{description}</p>
         </CardContent>
       </Card>
     </motion.div>
@@ -45,7 +43,7 @@ const CounterItem = ({ value, label }: { value: number; label: string }) => {
       transition={{ duration: 0.5 }}
     >
       <motion.div
-        className="text-4xl font-bold text-indigo-600 mb-2"
+        className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-purple-600 mb-2"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -53,7 +51,7 @@ const CounterItem = ({ value, label }: { value: number; label: string }) => {
       >
         {value}+
       </motion.div>
-      <div className="text-gray-600">{label}</div>
+      <div className="text-gray-300">{label}</div>
     </motion.div>
   )
 }
@@ -83,8 +81,22 @@ export const WhyChooseUs = () => {
   ]
 
   return (
-    <section className="py-24 px-4 md:px-20 bg-white" id="why">
-      <div className="container mx-auto">
+    <section className="py-24 px-4 md:px-20 relative overflow-hidden" id="why-us">
+      {/* Background with space theme */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://www.digitalgravity.ae/assets/images/home/launching-success-medium.webp')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
+
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,11 +104,11 @@ export const WhyChooseUs = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Why Lamp Media Tech Stands Out as the Best Digital Marketing Company Dubai
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-violet-500 to-indigo-500 mx-auto mb-6" />
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-purple-600 mx-auto mb-6" />
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             What sets us apart from other digital marketing companies in Dubai?
           </p>
         </motion.div>
@@ -118,11 +130,11 @@ export const WhyChooseUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-violet-50 to-indigo-50 rounded-2xl p-10"
+          className="bg-gradient-to-r from-purple-900/30 to-fuchsia-900/30 backdrop-blur-sm rounded-2xl p-10 border border-purple-500/20"
         >
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Impact in Numbers</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">Our Impact in Numbers</h3>
+            <p className="text-gray-300 max-w-2xl mx-auto">
               We've helped businesses across Dubai achieve remarkable growth through our digital marketing expertise.
             </p>
           </div>
@@ -143,8 +155,8 @@ export const WhyChooseUs = () => {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Approach</h3>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">Our Approach</h3>
+            <p className="text-gray-300 max-w-3xl mx-auto">
               We follow a proven methodology to ensure your digital marketing campaigns deliver exceptional results.
             </p>
           </motion.div>
@@ -171,17 +183,17 @@ export const WhyChooseUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-md border border-gray-100"
+                className="bg-black/40 backdrop-blur-sm p-6 rounded-lg shadow-md border border-purple-900/30"
               >
                 <div className="flex items-start">
                   <div className="mr-4 mt-1">
-                    <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">
+                    <div className="w-8 h-8 rounded-full bg-purple-900/50 flex items-center justify-center text-purple-300 font-bold">
                       {index + 1}
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2 text-gray-800">{item.step}</h4>
-                    <p className="text-gray-600">{item.description}</p>
+                    <h4 className="font-bold text-lg mb-2 text-white">{item.step}</h4>
+                    <p className="text-gray-300">{item.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -192,4 +204,3 @@ export const WhyChooseUs = () => {
     </section>
   )
 }
-
