@@ -11,10 +11,9 @@ type ServiceCardProps = {
   points: string[]
   icon: React.ReactNode
   index: number
-  approach?: string[]
 }
 
-const ServiceCard = ({ title, description, points, icon, index, approach }: ServiceCardProps) => (
+const ServiceCard = ({ title, description, points, icon, index, }: ServiceCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -32,19 +31,7 @@ const ServiceCard = ({ title, description, points, icon, index, approach }: Serv
         <CardDescription className="text-slate-600">{description}</CardDescription>
       </CardHeader>
       <CardContent>
-        {approach && (
-          <div className="mb-4">
-            <h4 className="font-semibold text-purple-700 mb-2">Our {title.split(" ")[0]} Approach Includes:</h4>
-            <ul className="space-y-2">
-              {approach.map((item, idx) => (
-                <li key={idx} className="flex items-start">
-                  <div className="mr-2 mt-1 h-1.5 w-1.5 rounded-full bg-pink-500 flex-shrink-0" />
-                  <span className="text-slate-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        
 
         <h4 className="font-semibold text-purple-700 mb-2">Our {title.split(" ")[0]} Services Include:</h4>
         <ul className="space-y-2">
@@ -67,12 +54,7 @@ export const Services = () => {
       description:
         "As a premier Dubai SEO agency, we specialize in on-page SEO, off-page SEO, technical SEO, and link-building. Our comprehensive strategies improve your website's visibility, authority, and overall performance across search engines.",
       icon: <Search className="h-6 w-6" />,
-      approach: [
-        "Comprehensive keyword research and analysis",
-        "Website structure and content optimization",
-        "Creating high-quality backlinks",
-        "Enhancing user experience",
-      ],
+      
       points: [
         "On-page SEO optimization",
         "Off-page SEO strategies",
@@ -190,7 +172,6 @@ export const Services = () => {
               title={service.title}
               description={service.description}
               points={service.points}
-              approach={service.approach}
               icon={service.icon}
               index={index}
             />

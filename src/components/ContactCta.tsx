@@ -48,40 +48,7 @@ export const ContactCTA = () => {
               </Button>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8 mt-16">
-              {[
-                {
-                  icon: <Phone className="h-6 w-6" />,
-                  title: "Call Us",
-                  content: "+91 6362xxxxxxx",
-                },
-                {
-                  icon: <Mail className="h-6 w-6" />,
-                  title: "Email Us",
-                  content: "demo@gmail.com",
-                },
-                {
-                  icon: <MapPin className="h-6 w-6" />,
-                  title: "Visit Us",
-                  content: "Business Bay, Dubai, UAE",
-                },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex flex-col items-center"
-                >
-                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 text-pink-300">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
-                  <p className="text-pink-300">{item.content}</p>
-                </motion.div>
-              ))}
-            </div>
+            
           </motion.div>
 
           <motion.div
@@ -98,6 +65,40 @@ export const ContactCTA = () => {
             />
           </motion.div>
         </div>
+        <div className="grid md:grid-cols-3 gap-8 mt-16 border-t border-white/20 pt-10">
+  {[
+    {
+      icon: <Phone className="h-6 w-6" />,
+      title: "Call Us",
+      content: "+91 6362xxxxxxx",
+    },
+    {
+      icon: <Mail className="h-6 w-6" />,
+      title: "Email Us",
+      content: "demo@gmail.com",
+    },
+    {
+      icon: <MapPin className="h-6 w-6" />,
+      title: "Visit Us",
+      content: "Business Bay, Dubai, UAE",
+    },
+  ].map((item, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="flex flex-col items-center"
+    >
+      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4 text-pink-300">
+        {item.icon}
+      </div>
+      <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
+      <p className="text-pink-300">{item.content}</p>
+    </motion.div>
+  ))}
+</div>
       </div>
     </section>
   )
