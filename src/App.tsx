@@ -7,6 +7,7 @@ import { Testimonials } from "./components/Testimonials"
 import { WelcomeSection } from './components/WelcomeSection'
 import { useEffect } from 'react'
 import { Navbar } from './components/Navbar'
+import Approch from './components/Approch'
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
       <WelcomeSection />
       <Services />
       <WhyChooseUs />
+      <Approch/>
       <Testimonials />
       <ContactCTA />
     </main>

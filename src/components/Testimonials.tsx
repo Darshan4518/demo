@@ -53,115 +53,121 @@ export const Testimonials = () => {
 
   return (
     <section
-      className="py-24 px-4 md:px-20 relative overflow-hidden bg-gradient-to-b from-purple-50 to-white"
-      id="testimonials"
+  className="py-24 px-4 md:px-20 relative overflow-hidden bg-gradient-to-b from-pink-100 via-fuchsia-50 to-purple-50"
+  id="testimonials"
+>
+  {/* Background with vibrant digital marketing theme */}
+  <div className="absolute inset-0 z-0">
+    <div
+      className="absolute inset-0 bg-cover bg-center opacity-10"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
+      }}
+    />
+  </div>
+
+  <div className="container mx-auto relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
     >
-      {/* Background with digital marketing theme */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-5"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-fuchsia-700">What Our Clients Say</h2>
+      <div className="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 mx-auto mb-6" />
+      <p className="text-lg text-fuchsia-800 max-w-3xl mx-auto">
+        Don't just take our word for it. Here's what our clients have to say about working with Lamp Media Tech.
+      </p>
+    </motion.div>
+
+    <div className="relative max-w-4xl mx-auto">
+      {/* Left Arrow */}
+      <div className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10">
+        <Button
+          variant="outline"
+          size="icon"
+          className="rounded-full bg-white shadow-lg hover:bg-rose-100 border-fuchsia-300"
+          onClick={prevTestimonial}
+        >
+          <ChevronLeft className="h-5 w-5 text-fuchsia-600" />
+          <span className="sr-only">Previous testimonial</span>
+        </Button>
       </div>
 
-      <div className="container mx-auto relative z-10">
+      <div className="overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          key={currentIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">What Our Clients Say</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 mx-auto mb-6" />
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our clients have to say about working with Lamp Media Tech.
-          </p>
-        </motion.div>
-
-        <div className="relative max-w-4xl mx-auto">
-          <div className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10">
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full bg-white shadow-md hover:bg-pink-50 border-pink-200"
-              onClick={prevTestimonial}
-            >
-              <ChevronLeft className="h-5 w-5 text-pink-600" />
-              <span className="sr-only">Previous testimonial</span>
-            </Button>
-          </div>
-
-          <div className="overflow-hidden">
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card className="border-slate-200 bg-gradient-to-br from-white to-pink-50 shadow-lg">
-                <CardContent className="p-8 md:p-12">
-                  <div className="flex flex-col md:flex-row gap-8 items-center">
-                    <div className="flex-shrink-0">
-                      <div className="relative">
-                        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-pink-200">
-                          <img
-                            src={testimonials[currentIndex].image || "/placeholder.svg"}
-                            alt={testimonials[currentIndex].name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full p-1.5 text-white">
-                          <Quote className="h-4 w-4" />
-                        </div>
-                      </div>
+          <Card className="border-pink-200 bg-gradient-to-br from-white to-rose-100 shadow-xl">
+            <CardContent className="p-8 md:p-12">
+              <div className="flex flex-col md:flex-row gap-8 items-center">
+                <div className="flex-shrink-0">
+                  <div className="relative">
+                    <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-fuchsia-300 shadow-md">
+                      <img
+                        src={testimonials[currentIndex].image || "/placeholder.svg"}
+                        alt={testimonials[currentIndex].name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-
-                    <div className="flex-1">
-                      <p className="text-slate-700 text-lg mb-6 italic">"{testimonials[currentIndex].content}"</p>
-                      <div>
-                        <h4 className="font-bold text-slate-800">{testimonials[currentIndex].name}</h4>
-                        <p className="text-pink-600">
-                          {testimonials[currentIndex].position}, {testimonials[currentIndex].company}
-                        </p>
-                      </div>
+                    <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-fuchsia-500 to-rose-500 rounded-full p-2 text-white shadow-lg">
+                      <Quote className="h-4 w-4" />
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
+                </div>
 
-          <div className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10">
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full bg-white shadow-md hover:bg-pink-50 border-pink-200"
-              onClick={nextTestimonial}
-            >
-              <ChevronRight className="h-5 w-5 text-pink-600" />
-              <span className="sr-only">Next testimonial</span>
-            </Button>
-          </div>
-        </div>
-
-        <div className="flex justify-center mt-8">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 mx-1 rounded-full ${index === currentIndex ? "bg-gradient-to-r from-pink-500 to-purple-500" : "bg-slate-300"}`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
-        </div>
+                <div className="flex-1">
+                  <p className="text-rose-900 text-lg mb-6 italic">"{testimonials[currentIndex].content}"</p>
+                  <div>
+                    <h4 className="font-bold text-fuchsia-800">{testimonials[currentIndex].name}</h4>
+                    <p className="text-fuchsia-600">
+                      {testimonials[currentIndex].position}, {testimonials[currentIndex].company}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </div>
-    </section>
+
+      {/* Right Arrow */}
+      <div className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10">
+        <Button
+          variant="outline"
+          size="icon"
+          className="rounded-full bg-white shadow-lg hover:bg-rose-100 border-fuchsia-300"
+          onClick={nextTestimonial}
+        >
+          <ChevronRight className="h-5 w-5 text-fuchsia-600" />
+          <span className="sr-only">Next testimonial</span>
+        </Button>
+      </div>
+    </div>
+
+    {/* Dots */}
+    <div className="flex justify-center mt-8">
+      {testimonials.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => setCurrentIndex(index)}
+          className={`w-3 h-3 mx-1 rounded-full transition-colors ${
+            index === currentIndex
+              ? "bg-gradient-to-r from-fuchsia-500 to-pink-500 shadow-md"
+              : "bg-fuchsia-200"
+          }`}
+          aria-label={`Go to testimonial ${index + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
   )
 }
