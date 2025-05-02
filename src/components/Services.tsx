@@ -22,36 +22,36 @@ const ServiceCard = ({ title, description, points, icon, index, approach }: Serv
     viewport={{ once: true }}
     whileHover={{ y: -5, transition: { duration: 0.2 } }}
   >
-    <Card className="h-full border-purple-900/50 bg-black/40 backdrop-blur-sm shadow-lg hover:shadow-purple-500/10 transition-shadow duration-300 overflow-hidden group">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-fuchsia-500 to-purple-600 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+    <Card className="h-full border-slate-200 bg-gradient-to-br from-white to-purple-50 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
       <CardHeader className="pb-2">
-        <div className="w-12 h-12 rounded-lg bg-purple-900/50 flex items-center justify-center mb-4 text-purple-300">
+        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center mb-4 text-pink-600">
           {icon}
         </div>
-        <CardTitle className="text-xl font-bold text-white">{title}</CardTitle>
-        <CardDescription className="text-gray-400">{description}</CardDescription>
+        <CardTitle className="text-xl font-bold text-slate-800">{title}</CardTitle>
+        <CardDescription className="text-slate-600">{description}</CardDescription>
       </CardHeader>
       <CardContent>
         {approach && (
           <div className="mb-4">
-            <h4 className="font-semibold text-purple-300 mb-2">Our {title.split(" ")[0]} Approach Includes:</h4>
+            <h4 className="font-semibold text-purple-700 mb-2">Our {title.split(" ")[0]} Approach Includes:</h4>
             <ul className="space-y-2">
               {approach.map((item, idx) => (
                 <li key={idx} className="flex items-start">
-                  <div className="mr-2 mt-1 h-1.5 w-1.5 rounded-full bg-fuchsia-500 flex-shrink-0" />
-                  <span className="text-gray-300">{item}</span>
+                  <div className="mr-2 mt-1 h-1.5 w-1.5 rounded-full bg-pink-500 flex-shrink-0" />
+                  <span className="text-slate-700">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
         )}
 
-        <h4 className="font-semibold text-purple-300 mb-2">Our {title.split(" ")[0]} Services Include:</h4>
+        <h4 className="font-semibold text-purple-700 mb-2">Our {title.split(" ")[0]} Services Include:</h4>
         <ul className="space-y-2">
           {points.map((point, idx) => (
             <li key={idx} className="flex items-start">
-              <div className="mr-2 mt-1 h-1.5 w-1.5 rounded-full bg-fuchsia-500 flex-shrink-0" />
-              <span className="text-gray-300">{point}</span>
+              <div className="mr-2 mt-1 h-1.5 w-1.5 rounded-full bg-pink-500 flex-shrink-0" />
+              <span className="text-slate-700">{point}</span>
             </li>
           ))}
         </ul>
@@ -148,19 +148,21 @@ export const Services = () => {
   ]
 
   return (
-    <section className="py-24 px-4 md:px-20 relative overflow-hidden" id="services">
-      {/* Background with space theme */}
+    <section
+      className="py-24 px-4 md:px-20 relative overflow-hidden bg-gradient-to-b from-white to-purple-50"
+      id="services"
+    >
+      {/* Background with digital marketing theme */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-5"
           style={{
             backgroundImage:
-              "url('')",
+              "url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
-        <div className="absolute inset-0 bg-black/70" />
       </div>
 
       <div className="container mx-auto relative z-10">
@@ -171,11 +173,11 @@ export const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">
             Digital Marketing Services in Dubai – Specialized Solutions
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-purple-600 mx-auto mb-6" />
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 mx-auto mb-6" />
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             As a top-tier digital marketing agency, we provide a broad range of services designed to enhance your
             brand's online presence. Here's a glimpse of our digital marketing services in Dubai:
           </p>
@@ -204,7 +206,7 @@ export const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="mt-4 text-gray-400 italic text-center max-w-3xl mx-auto"
+                className="mt-4 text-slate-600 italic text-center max-w-3xl mx-auto"
               >
                 <p className="text-sm mt-2">{service.note}</p>
               </motion.div>

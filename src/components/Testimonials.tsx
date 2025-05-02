@@ -52,19 +52,21 @@ export const Testimonials = () => {
   }
 
   return (
-    <section className="py-24 px-4 md:px-20 relative overflow-hidden" id="testimonials">
-      {/* Background with space theme */}
+    <section
+      className="py-24 px-4 md:px-20 relative overflow-hidden bg-gradient-to-b from-purple-50 to-white"
+      id="testimonials"
+    >
+      {/* Background with digital marketing theme */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-5"
           style={{
             backgroundImage:
-              "url('https://www.digitalgravity.ae/assets/images/services-details/process-bg-digital-marketing.webp')",
+              "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
-        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <div className="container mx-auto relative z-10">
@@ -75,9 +77,9 @@ export const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">What Our Clients Say</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-purple-600 mx-auto mb-6" />
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800">What Our Clients Say</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 mx-auto mb-6" />
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about working with Lamp Media Tech.
           </p>
         </motion.div>
@@ -87,10 +89,10 @@ export const Testimonials = () => {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full bg-black/40 backdrop-blur-sm hover:bg-purple-900/30 border-purple-500/30 text-white"
+              className="rounded-full bg-white shadow-md hover:bg-pink-50 border-pink-200"
               onClick={prevTestimonial}
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-5 w-5 text-pink-600" />
               <span className="sr-only">Previous testimonial</span>
             </Button>
           </div>
@@ -103,29 +105,29 @@ export const Testimonials = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="border-purple-900/50 bg-black/40 backdrop-blur-sm shadow-lg">
+              <Card className="border-slate-200 bg-gradient-to-br from-white to-pink-50 shadow-lg">
                 <CardContent className="p-8 md:p-12">
                   <div className="flex flex-col md:flex-row gap-8 items-center">
                     <div className="flex-shrink-0">
                       <div className="relative">
-                        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-purple-500/30">
+                        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-pink-200">
                           <img
                             src={testimonials[currentIndex].image || "/placeholder.svg"}
                             alt={testimonials[currentIndex].name}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="absolute -bottom-2 -right-2 bg-purple-900/70 rounded-full p-1.5 text-purple-300">
+                        <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full p-1.5 text-white">
                           <Quote className="h-4 w-4" />
                         </div>
                       </div>
                     </div>
 
                     <div className="flex-1">
-                      <p className="text-gray-300 text-lg mb-6 italic">"{testimonials[currentIndex].content}"</p>
+                      <p className="text-slate-700 text-lg mb-6 italic">"{testimonials[currentIndex].content}"</p>
                       <div>
-                        <h4 className="font-bold text-white">{testimonials[currentIndex].name}</h4>
-                        <p className="text-purple-300">
+                        <h4 className="font-bold text-slate-800">{testimonials[currentIndex].name}</h4>
+                        <p className="text-pink-600">
                           {testimonials[currentIndex].position}, {testimonials[currentIndex].company}
                         </p>
                       </div>
@@ -140,10 +142,10 @@ export const Testimonials = () => {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full bg-black/40 backdrop-blur-sm hover:bg-purple-900/30 border-purple-500/30 text-white"
+              className="rounded-full bg-white shadow-md hover:bg-pink-50 border-pink-200"
               onClick={nextTestimonial}
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-5 w-5 text-pink-600" />
               <span className="sr-only">Next testimonial</span>
             </Button>
           </div>
@@ -154,7 +156,7 @@ export const Testimonials = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 mx-1 rounded-full ${index === currentIndex ? "bg-fuchsia-500" : "bg-gray-600"}`}
+              className={`w-3 h-3 mx-1 rounded-full ${index === currentIndex ? "bg-gradient-to-r from-pink-500 to-purple-500" : "bg-slate-300"}`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
